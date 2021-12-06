@@ -3,52 +3,31 @@
 @body-bg-value: #FFF;
 @brand-primary-value: #5184B0;
 
-@main-gray-5-value: darken(@main-gray-value, 5%);
-@main-gray-7-value: darken(@main-gray-value, 7%);
-@main-gray-10-value: darken(@main-gray-value, 10%);
-@main-gray-12-value: darken(@main-gray-value, 12%);
-@main-gray-17-value: darken(@main-gray-value, 17%);
-@main-gray-25-value: darken(@main-gray-value, 25%);
-@main-gray-40-value: darken(@main-gray-value, 40%);
-
-@main-gray-lighten-40-value: lighten(@main-gray-value, 40%);
-
-@brand-primary-5-value: darken(@brand-primary-value, 5%);
-@brand-primary-10-value: darken(@brand-primary-value, 10%);
-@brand-primary-12-value: darken(@brand-primary-value, 12%);
-@brand-primary-15-value: darken(@brand-primary-value, 15%);
-@brand-primary-17-value: darken(@brand-primary-value, 17%);
-@brand-primary-25-value: darken(@brand-primary-value, 25%);
-
-@brand-primary-lighten-10-value: lighten(@brand-primary-value, 10%);
-@brand-primary-lighten-30-value: lighten(@brand-primary-value, 30%);
-@brand-primary-lighten-50-value: lighten(@brand-primary-value, 50%);
-
 :root {
     --body-bg: @body-bg-value;
     --panel-bg: @body-bg-value;
     --main-gray: @main-gray-value;
     --brand-primary: @brand-primary-value;
 
-    --main-gray-5: @main-gray-5-value;
-    --main-gray-7: @main-gray-7-value;
-    --main-gray-10: @main-gray-10-value;
-    --main-gray-12: @main-gray-12-value;
-    --main-gray-17: @main-gray-17-value;
-    --main-gray-25: @main-gray-25-value;
-    --main-gray-40: @main-gray-40-value;
-    --main-gray-lighten-40: @main-gray-lighten-40-value;
+    --main-gray-5: darken(@main-gray-value, 5%);
+    --main-gray-7: darken(@main-gray-value, 7%);
+    --main-gray-10: darken(@main-gray-value, 10%);
+    --main-gray-12: darken(@main-gray-value, 12%);
+    --main-gray-17: darken(@main-gray-value, 17%);
+    --main-gray-25: darken(@main-gray-value, 25%);
+    --main-gray-40: darken(@main-gray-value, 40%);
+    --main-gray-lighten-40: lighten(@main-gray-value, 40%);
 
-    --brand-primary-5: @brand-primary-5-value;
-    --brand-primary-10: @brand-primary-10-value;
-    --brand-primary-12: @brand-primary-12-value;
-    --brand-primary-15: @brand-primary-15-value;
-    --brand-primary-17: @brand-primary-17-value;
-    --brand-primary-25: @brand-primary-25-value;
+    --brand-primary-5: darken(@brand-primary-value, 5%);
+    --brand-primary-10: darken(@brand-primary-value, 10%);
+    --brand-primary-12: darken(@brand-primary-value, 12%);
+    --brand-primary-15: darken(@brand-primary-value, 15%);
+    --brand-primary-17: darken(@brand-primary-value, 17%);
+    --brand-primary-25: darken(@brand-primary-value, 25%);
 
-    --brand-primary-lighten-10: @brand-primary-lighten-10-value;
-    --brand-primary-lighten-30: @brand-primary-lighten-30-value;
-    --brand-primary-lighten-50: @brand-primary-lighten-50-value;
+    --brand-primary-lighten-10: lighten(@brand-primary-value, 10%);
+    --brand-primary-lighten-30: lighten(@brand-primary-value, 30%);
+    --brand-primary-lighten-50: lighten(@brand-primary-value, 50%);
 }
 
 @body-bg: var(--body-bg);
