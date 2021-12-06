@@ -1,6 +1,7 @@
 @main-gray-value: #E8ECED;
 @body-bg-value: #FEFEFE;
 @body-bg-value: #FFF;
+@brand-primary-value: #5184B0;
 
 @main-gray-5-value: darken(@main-gray-value, 5%);
 @main-gray-7-value: darken(@main-gray-value, 7%);
@@ -10,10 +11,24 @@
 @main-gray-25-value: darken(@main-gray-value, 25%);
 @main-gray-40-value: darken(@main-gray-value, 40%);
 
+@main-gray-lighten-40-value: lighten(@main-gray-value, 40%);
+
+@brand-primary-5-value: darken(@brand-primary-value, 5%);
+@brand-primary-10-value: darken(@brand-primary-value, 10%);
+@brand-primary-12-value: darken(@brand-primary-value, 12%);
+@brand-primary-15-value: darken(@brand-primary-value, 15%);
+@brand-primary-17-value: darken(@brand-primary-value, 17%);
+@brand-primary-25-value: darken(@brand-primary-value, 25%);
+
+@brand-primary-lighten-10-value: lighten(@brand-primary-value, 10%);
+@brand-primary-lighten-30-value: lighten(@brand-primary-value, 30%);
+@brand-primary-lighten-50-value: lighten(@brand-primary-value, 50%);
+
 :root {
     --body-bg: @body-bg-value;
     --panel-bg: @body-bg-value;
     --main-gray: @main-gray-value;
+    --brand-primary: @brand-primary-value;
 
     --main-gray-5: @main-gray-5-value;
     --main-gray-7: @main-gray-7-value;
@@ -22,6 +37,18 @@
     --main-gray-17: @main-gray-17-value;
     --main-gray-25: @main-gray-25-value;
     --main-gray-40: @main-gray-40-value;
+    --main-gray-lighten-40: @main-gray-lighten-40-value;
+
+    --brand-primary-5: @brand-primary-5-value;
+    --brand-primary-10: @brand-primary-10-value;
+    --brand-primary-12: @brand-primary-12-value;
+    --brand-primary-15: @brand-primary-15-value;
+    --brand-primary-17: @brand-primary-17-value;
+    --brand-primary-25: @brand-primary-25-value;
+
+    --brand-primary-lighten-10: @brand-primary-lighten-10-value;
+    --brand-primary-lighten-30: @brand-primary-lighten-30-value;
+    --brand-primary-lighten-50: @brand-primary-lighten-50-value;
 }
 
 @body-bg: var(--body-bg);
@@ -36,13 +63,30 @@
 @btn-default-bg-17: var(--main-gray-17);
 @btn-default-border-25: var(--main-gray-25);
 
+@btn-primary-bg-10: var(--brand-primary-10);
+@btn-primary-border-12: var(--brand-primary-12);
+@btn-primary-bg-17: var(--brand-primary-17);
+@btn-primary-border-25: var(--brand-primary-25);
+
+@brand-primary-10: var(--brand-primary-10);
+
 @default-border-color: @main-gray;
 @default-heading-bg-color: @main-gray;
+
+@brand-primary: var(--brand-primary);
+
+@brand-danger: #CF605D;
+@brand-info: #a595c9;
+@brand-success: #87C956;
+@brand-warning: #EF990E;
+
+@link-color: @brand-primary;
+@link-hover-color: var(--brand-primary-15);
 
 @table-bg-hover: @default-heading-bg-color;
 @table-bg-active-5: var(--main-gray-5);
 
-@list-group-active-text-color: var(--main-gray-40);
+@list-group-active-text-color: var(--main-gray-lighten-40);
 
 @line-height-base: 1.36;
 @line-height-computed: floor(@font-size-base * @line-height-base);
@@ -102,12 +146,6 @@
 
 @tob-bar-height: @navbar-height;
 
-@brand-primary: #5184B0;
-@brand-danger: #CF605D;
-@brand-info: #a595c9;
-@brand-success: #87C956;
-@brand-warning: #EF990E;
-
 @state-info-bg: #e5ddf8;
 @state-info-text: #83779c;
 
@@ -125,12 +163,11 @@
 
 @panel-warning-bg: #efda97;
 
-@panel-primary-border: lighten(@brand-primary, 12%);
+@panel-primary-border: var(--brand-primary-12);
 
 @gray-light: #999;
 
 @input-border: #D1D5D6;
-
 
 @table-bg-accent: #f9f9f9;
 
@@ -139,6 +176,8 @@
 
 @pre-border-color: @main-gray;
 @pre-bg: @code-bg;
+
+@btn-primary-border: var(--brand-primary-5);
 
 @btn-success-border: @btn-success-bg;
 @btn-primary-border: @btn-primary-bg;
