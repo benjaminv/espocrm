@@ -1,5 +1,51 @@
-@line-height-base:        1.36;
-@line-height-computed:    floor(@font-size-base * @line-height-base);
+@main-gray-value: #E8ECED;
+@body-bg-value: #FEFEFE;
+@body-bg-value: #FFF;
+
+@main-gray-5-value: darken(@main-gray-value, 5%);
+@main-gray-7-value: darken(@main-gray-value, 7%);
+@main-gray-10-value: darken(@main-gray-value, 10%);
+@main-gray-12-value: darken(@main-gray-value, 12%);
+@main-gray-17-value: darken(@main-gray-value, 17%);
+@main-gray-25-value: darken(@main-gray-value, 25%);
+@main-gray-40-value: darken(@main-gray-value, 40%);
+
+:root {
+    --body-bg: @body-bg-value;
+    --panel-bg: @body-bg-value;
+    --main-gray: @main-gray-value;
+
+    --main-gray-5: @main-gray-5-value;
+    --main-gray-7: @main-gray-7-value;
+    --main-gray-10: @main-gray-10-value;
+    --main-gray-12: @main-gray-12-value;
+    --main-gray-17: @main-gray-17-value;
+    --main-gray-25: @main-gray-25-value;
+    --main-gray-40: @main-gray-40-value;
+}
+
+@body-bg: var(--body-bg);
+@panel-bg: var(--panel-bg);
+@main-gray: var(--main-gray);
+
+@btn-default-bg: @main-gray;
+@btn-default-border: @main-gray;
+
+@btn-default-bg-10: var(--main-gray-10);
+@btn-default-border-12: var(--main-gray-12);
+@btn-default-bg-17: var(--main-gray-17);
+@btn-default-border-25: var(--main-gray-25);
+
+@default-border-color: @main-gray;
+@default-heading-bg-color: @main-gray;
+
+@table-bg-hover: @default-heading-bg-color;
+@table-bg-active-5: var(--main-gray-5);
+
+@list-group-active-text-color: var(--main-gray-40);
+
+@line-height-base: 1.36;
+@line-height-computed: floor(@font-size-base * @line-height-base);
 @headings-line-height: 1;
 
 @font-family-sans-serif: 'Open Sans', sans-serif;
@@ -82,12 +128,9 @@
 @panel-primary-border: lighten(@brand-primary, 12%);
 
 @gray-light: #999;
-@main-gray: #E8ECED;
 
 @input-border: #D1D5D6;
 
-@btn-default-bg: @main-gray;
-@btn-default-border: @main-gray;
 
 @table-bg-accent: #f9f9f9;
 
@@ -121,15 +164,12 @@
 
 @gray-soft: lighten(@gray-base, 39.0%);
 
-@body-bg: #FEFEFE;
-@panel-bg: #FFF;
-
-@default-border-color: @main-gray;
-@default-heading-bg-color: @main-gray;
 
 @well-bg: @default-heading-bg-color;
 @breadcrumb-bg: @default-heading-bg-color;
-@table-bg-hover: @default-heading-bg-color;
+
+@well-border: var(--main-gray-7);
+
 @progress-bg: @default-heading-bg-color;
 @list-group-hover-bg: @default-heading-bg-color;
 @panel-footer-bg: @default-heading-bg-color;
