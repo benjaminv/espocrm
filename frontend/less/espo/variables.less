@@ -1,13 +1,21 @@
 @main-gray-value: #E8ECED;
+
 @body-bg-value: #FEFEFE;
-@body-bg-value: #FFF;
+//@body-bg-value: #FFF;
+
 @brand-primary-value: #5184B0;
+@brand-danger-value: #CF605D;
+@brand-info-value: #a595c9;
+@brand-success-value: #87C956;
 
 :root {
     --body-bg: @body-bg-value;
     --panel-bg: @body-bg-value;
     --main-gray: @main-gray-value;
     --brand-primary: @brand-primary-value;
+    --brand-danger: @brand-danger-value;
+    --brand-info: @brand-info-value;
+    --brand-success: @brand-success-value;
 
     --main-gray-5: darken(@main-gray-value, 5%);
     --main-gray-7: darken(@main-gray-value, 7%);
@@ -28,6 +36,37 @@
     --brand-primary-lighten-10: lighten(@brand-primary-value, 10%);
     --brand-primary-lighten-30: lighten(@brand-primary-value, 30%);
     --brand-primary-lighten-50: lighten(@brand-primary-value, 50%);
+
+    --brand-danger-5: darken(@brand-danger-value, 5%);
+    --brand-danger-10: darken(@brand-danger-value, 10%);
+    --brand-danger-12: darken(@brand-danger-value, 12%);
+    --brand-danger-15: darken(@brand-danger-value, 15%);
+    --brand-danger-17: darken(@brand-danger-value, 17%);
+    --brand-danger-25: darken(@brand-danger-value, 25%);
+
+    --brand-danger-lighten-20: lighten(@brand-danger-value, 20%);
+
+    --brand-info-5: darken(@brand-info-value, 5%);
+    --brand-info-10: darken(@brand-info-value, 10%);
+    --brand-info-12: darken(@brand-info-value, 12%);
+    --brand-info-15: darken(@brand-info-value, 15%);
+    --brand-info-17: darken(@brand-info-value, 17%);
+    --brand-info-25: darken(@brand-info-value, 25%);
+
+    --brand-success-5: darken(@brand-success-value, 5%);
+    --brand-success-10: darken(@brand-success-value, 10%);
+    --brand-success-12: darken(@brand-success-value, 12%);
+    --brand-success-15: darken(@brand-success-value, 15%);
+    --brand-success-17: darken(@brand-success-value, 17%);
+    --brand-success-25: darken(@brand-success-value, 25%);
+
+    --brand-success-spin-1: lighten(spin(@brand-success-value, 5), 31%);
+    --brand-success-spin-2: darken(spin(@brand-success-value, 7), 17%);
+    --brand-success-spin-1-5: darken(lighten(spin(@brand-success-value, 5), 31%), 5%);
+    --brand-success-spin-1-10: darken(lighten(spin(@brand-success-value, 5), 31%), 10%);
+    --brand-success-spin-2-10: darken(darken(spin(@brand-success-value, 7), 17%), 10%);
+
+    --brand-success-spin-2-10-lighten: lighten(darken(darken(spin(@brand-success-value, 7), 17%), 10%), 20%);
 }
 
 @body-bg: var(--body-bg);
@@ -36,6 +75,9 @@
 
 @btn-default-bg: @main-gray;
 @btn-default-border: @main-gray;
+@btn-danger-bg: var(--brand-danger-5);
+@btn-info-border: var(--brand-info-5);
+@btn-success-border: var(--brand-success-5);
 
 @btn-default-bg-10: var(--main-gray-10);
 @btn-default-border-12: var(--main-gray-12);
@@ -47,16 +89,34 @@
 @btn-primary-bg-17: var(--brand-primary-17);
 @btn-primary-border-25: var(--brand-primary-25);
 
+@btn-danger-bg-10: var(--brand-danger-10);
+@btn-danger-border-12: var(--brand-danger-12);
+@btn-danger-bg-17: var(--brand-danger-17);
+@btn-danger-border-25: var(--brand-danger-25);
+
+@btn-info-bg-10: var(--brand-info-10);
+@btn-info-border-12: var(--brand-info-12);
+@btn-info-bg-17: var(--brand-info-17);
+@btn-info-border-25: var(--brand-info-25);
+
+@btn-success-bg-10: var(--brand-success-10);
+@btn-success-border-12: var(--success-info-12);
+@btn-success-bg-17: var(--brand-success-17);
+@btn-success-border-25: var(--brand-success-25);
+
 @brand-primary-10: var(--brand-primary-10);
+@brand-danger-10 : var(--brand-danger-10);
+@brand-info-10: var(--brand-info-10);
+@brand-success-10: var(--brand-success-10);
 
 @default-border-color: @main-gray;
 @default-heading-bg-color: @main-gray;
 
 @brand-primary: var(--brand-primary);
+@brand-danger: var(--brand-danger);
+@brand-info: var(--brand-info);
+@brand-success: var(--brand-success);
 
-@brand-danger: #CF605D;
-@brand-info: #a595c9;
-@brand-success: #87C956;
 @brand-warning: #EF990E;
 
 @link-color: @brand-primary;
@@ -131,12 +191,18 @@
 @state-warning-bg: #fcf8e3;
 @state-warning-text: #9E7328;
 
-@state-success-bg: lighten(spin(@brand-success, 5), 31%);
-@state-success-text: darken(spin(@brand-success, 7), 17%);
+@state-success-bg: var(--brand-success-spin-1);
+@state-success-text: var(--brand-success-spin-2);
+
+@state-success-bg-5: var(--brand-success-spin-1-5);
+@state-success-bg-10: var(--brand-success-spin-1-10);
 
 @state-danger-text: #ad4846;
 @state-danger-bg: #f2dede;
 @state-danger-border: darken(spin(@state-danger-bg, -10), 5%);
+
+@state-success-border: var(--brand-success-spin-1-5);
+@state-success-text-10: var(--brand-success-spin-2-10);
 
 @state-primary-text: #5b9aca;
 

@@ -426,7 +426,13 @@ input[type="checkbox"] {
 
 // Feedback states
 .has-success {
-  .form-control-validation(@state-success-text; @state-success-text; @state-success-bg);
+  .form-control-validation-espo(
+    @state-success-text;
+    @state-success-text;
+    @state-success-bg;
+    @state-success-text-10;
+    var(--brand-success-spin-2-10-lighten)
+  );
 }
 .has-warning {
   .form-control-validation(@state-warning-text; @state-warning-text; @state-warning-bg);
