@@ -1,21 +1,36 @@
 @main-gray-value: #E8ECED;
 
 @body-bg-value: #FEFEFE;
-//@body-bg-value: #FFF;
 
 @brand-primary-value: #5184B0;
 @brand-danger-value: #CF605D;
 @brand-info-value: #a595c9;
 @brand-success-value: #87C956;
+@brand-warning-value: #EF990E;
+
+@state-primary-text-value: #5b9aca;
+
+@state-info-bg: #e5ddf8;
+@state-info-text: #83779c;
+
+@state-warning-bg: #fcf8e3;
+@state-warning-text: #9E7328;
+
+@state-danger-text: #ad4846;
+@state-danger-bg: #f2dede;
 
 :root {
     --body-bg: @body-bg-value;
     --panel-bg: @body-bg-value;
     --main-gray: @main-gray-value;
+
     --brand-primary: @brand-primary-value;
     --brand-danger: @brand-danger-value;
     --brand-info: @brand-info-value;
     --brand-success: @brand-success-value;
+    --brand-warning: @brand-warning-value;
+
+    --state-primary-text: @state-primary-text-value;
 
     --main-gray-5: darken(@main-gray-value, 5%);
     --main-gray-7: darken(@main-gray-value, 7%);
@@ -43,7 +58,6 @@
     --brand-danger-15: darken(@brand-danger-value, 15%);
     --brand-danger-17: darken(@brand-danger-value, 17%);
     --brand-danger-25: darken(@brand-danger-value, 25%);
-
     --brand-danger-lighten-20: lighten(@brand-danger-value, 20%);
 
     --brand-info-5: darken(@brand-info-value, 5%);
@@ -65,8 +79,24 @@
     --brand-success-spin-1-5: darken(lighten(spin(@brand-success-value, 5), 31%), 5%);
     --brand-success-spin-1-10: darken(lighten(spin(@brand-success-value, 5), 31%), 10%);
     --brand-success-spin-2-10: darken(darken(spin(@brand-success-value, 7), 17%), 10%);
-
     --brand-success-spin-2-10-lighten: lighten(darken(darken(spin(@brand-success-value, 7), 17%), 10%), 20%);
+
+    --brand-warning-5: darken(@brand-warning-value, 5%);
+    --brand-warning-10: darken(@brand-warning-value, 10%);
+    --brand-warning-12: darken(@brand-warning-value, 12%);
+    --brand-warning-15: darken(@brand-warning-value, 15%);
+    --brand-warning-17: darken(@brand-warning-value, 17%);
+    --brand-warning-25: darken(@brand-warning-value, 25%);
+
+    --brand-warning-spin-1: lighten(spin(@brand-warning-value, 5), 31%);
+    --brand-warning-spin-2: darken(spin(@brand-warning-value, 7), 17%);
+    --brand-warning-spin-1-5: darken(lighten(spin(@brand-warning-value, 5), 31%), 5%);
+    --brand-warning-spin-1-10: darken(lighten(spin(@brand-warning-value, 5), 31%), 10%);
+    --brand-warning-spin-2-10: darken(darken(spin(@brand-warning-value, 7), 17%), 10%);
+    --brand-warning-spin-2-10-lighten: lighten(darken(darken(spin(@brand-warning-value, 7), 17%), 10%), 20%);
+
+
+
 }
 
 @body-bg: var(--body-bg);
@@ -78,6 +108,7 @@
 @btn-danger-bg: var(--brand-danger-5);
 @btn-info-border: var(--brand-info-5);
 @btn-success-border: var(--brand-success-5);
+@btn-warning-border: var(--brand-warning-5);
 
 @btn-default-bg-10: var(--main-gray-10);
 @btn-default-border-12: var(--main-gray-12);
@@ -104,10 +135,16 @@
 @btn-success-bg-17: var(--brand-success-17);
 @btn-success-border-25: var(--brand-success-25);
 
+@btn-warning-bg-10: var(--brand-warning-10);
+@btn-warning-border-12: var(--warning-info-12);
+@btn-warning-bg-17: var(--brand-warning-17);
+@btn-warning-border-25: var(--brand-warning-25);
+
 @brand-primary-10: var(--brand-primary-10);
 @brand-danger-10 : var(--brand-danger-10);
 @brand-info-10: var(--brand-info-10);
 @brand-success-10: var(--brand-success-10);
+@brand-warning-10: var(--brand-warning-10);
 
 @default-border-color: @main-gray;
 @default-heading-bg-color: @main-gray;
@@ -116,8 +153,7 @@
 @brand-danger: var(--brand-danger);
 @brand-info: var(--brand-info);
 @brand-success: var(--brand-success);
-
-@brand-warning: #EF990E;
+@brand-warning: var(--brand-warning);
 
 @link-color: @brand-primary;
 @link-hover-color: var(--brand-primary-15);
@@ -185,26 +221,16 @@
 
 @tob-bar-height: @navbar-height;
 
-@state-info-bg: #e5ddf8;
-@state-info-text: #83779c;
-
-@state-warning-bg: #fcf8e3;
-@state-warning-text: #9E7328;
-
 @state-success-bg: var(--brand-success-spin-1);
 @state-success-text: var(--brand-success-spin-2);
 
 @state-success-bg-5: var(--brand-success-spin-1-5);
 @state-success-bg-10: var(--brand-success-spin-1-10);
 
-@state-danger-text: #ad4846;
-@state-danger-bg: #f2dede;
-@state-danger-border: darken(spin(@state-danger-bg, -10), 5%);
-
 @state-success-border: var(--brand-success-spin-1-5);
 @state-success-text-10: var(--brand-success-spin-2-10);
 
-@state-primary-text: #5b9aca;
+@state-danger-border: darken(spin(@state-danger-bg, -10), 5%);
 
 @panel-warning-bg: #efda97;
 
