@@ -20,11 +20,11 @@
 @state-info-bg-value: #e5ddf8;
 @state-info-text-value: #83779c;
 
-@state-warning-bg: #fcf8e3;
-@state-warning-text: #9E7328;
+@state-warning-bg-value: #fcf8e3;
+@state-warning-text-value: #9E7328;
 
-@state-danger-text: #ad4846;
-@state-danger-bg: #f2dede;
+@state-danger-text-value: #ad4846;
+@state-danger-bg-value: #f2dede;
 
 @state-info-bg-mix-value: mix(@state-info-bg-value, lighten(@gray-base-value, 93.5%), 50%);
 
@@ -71,6 +71,12 @@
     --brand-danger-25: darken(@brand-danger-value, 25%);
     --brand-danger-lighten-20: lighten(@brand-danger-value, 20%);
 
+    --state-danger-bg: @state-danger-bg-value;
+    --state-danger-text: @state-danger-text-value;
+
+    --state-danger-bg-5: darken(@state-danger-bg-value, 5%);
+    --state-danger-bg-10: darken(@state-danger-bg-value, 10%);
+
     --brand-info-5: darken(@brand-info-value, 5%);
     --brand-info-10: darken(@brand-info-value, 10%);
     --brand-info-12: darken(@brand-info-value, 12%);
@@ -114,12 +120,11 @@
     --brand-warning-17: darken(@brand-warning-value, 17%);
     --brand-warning-25: darken(@brand-warning-value, 25%);
 
-    --brand-warning-spin-1: lighten(spin(@brand-warning-value, 5), 31%);
-    --brand-warning-spin-2: darken(spin(@brand-warning-value, 7), 17%);
-    --brand-warning-spin-1-5: darken(lighten(spin(@brand-warning-value, 5), 31%), 5%);
-    --brand-warning-spin-1-10: darken(lighten(spin(@brand-warning-value, 5), 31%), 10%);
-    --brand-warning-spin-2-10: darken(darken(spin(@brand-warning-value, 7), 17%), 10%);
-    --brand-warning-spin-2-10-lighten: lighten(darken(darken(spin(@brand-warning-value, 7), 17%), 10%), 20%);
+    --state-warning-bg: @state-warning-bg-value;
+    --state-warning-text: @state-warning-text-value;
+
+    --state-warning-bg-5: darken(@state-warning-bg-value, 5%);
+    --state-warning-bg-10: darken(@state-warning-bg-value, 10%);
 }
 
 @body-bg: var(--body-bg);
@@ -253,12 +258,14 @@
 @state-success-border: var(--state-success-bg-5);
 @state-success-text-10: var(--state-success-text-10);
 
-@state-danger-border: darken(spin(@state-danger-bg, -10), 5%);
+@state-danger-border: var(--state-danger-bg-10);
 
 @state-info-bg: var(--state-info-bg);
 @state-info-bg-5: var(--state-info-bg-5);
 
 @state-info-border: var(--state-info-bg-10);
+
+@state-warning-border: var(--state-warning-bg-10);
 
 @panel-warning-bg: #efda97;
 
