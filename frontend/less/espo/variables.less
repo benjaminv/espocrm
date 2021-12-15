@@ -28,6 +28,10 @@
 
 @state-info-bg-mix-value: mix(@state-info-bg-value, lighten(@gray-base-value, 93.5%), 50%);
 
+@navbar-inverse-color-value: @gray-light;
+@navbar-inverse-bg-value: #4A6492;
+@navbar-inverse-border-value: transparent;
+
 :root {
     --body-bg: @body-bg-value;
     --panel-bg: @body-bg-value;
@@ -125,6 +129,13 @@
 
     --state-warning-bg-5: darken(@state-warning-bg-value, 5%);
     --state-warning-bg-10: darken(@state-warning-bg-value, 10%);
+
+    --navbar-inverse-color: @navbar-inverse-color-value;
+    --navbar-inverse-bg: @navbar-inverse-bg-value;
+    --navbar-inverse-link-active-bg: darken(@navbar-inverse-bg-value, 10%);
+    --navbar-inverse-border: @navbar-inverse-border-value;
+    --navbar-inverse-toggle-hover-bg: darken(@navbar-inverse-bg-value, 10%);
+    --navbar-inverse-bg-7: darken(@navbar-inverse-bg-value, 7%);
 }
 
 @body-bg: var(--body-bg);
@@ -291,24 +302,25 @@
 @btn-info-border: @btn-info-bg;
 @btn-warning-border: @btn-warning-bg;
 
-@navbar-inverse-color: @gray-light;
-@navbar-inverse-bg: #4A6492;
-@navbar-inverse-border: transparent;
+@navbar-inverse-color: var(--navbar-inverse-color);
+@navbar-inverse-bg: var(--navbar-inverse-bg);
+@navbar-inverse-link-active-bg: var(--navbar-inverse-link-active-bg);
+@navbar-inverse-border: var(--navbar-inverse-border);
+
 @navbar-inverse-link-color: #DFDFDF;
 @navbar-inverse-link-hover-color: #fff;
 @navbar-inverse-link-hover-bg: transparent;
 @navbar-inverse-link-active-color:  @navbar-inverse-link-hover-color;
-@navbar-inverse-link-active-bg: darken(@navbar-inverse-bg, 10%);
+
 @navbar-inverse-link-disabled-color:  #444;
 @navbar-inverse-link-disabled-bg: transparent;
-@navbar-inverse-toggle-hover-bg: darken(@navbar-inverse-bg, 10%);
+@navbar-inverse-toggle-hover-bg: var(--navbar-inverse-toggle-hover-bg);
 
 @white-color: #fafbfc;
 
 @panel-primary-text: @white-color;
 
 @gray-soft: lighten(@gray-base, 39.0%);
-
 
 @well-bg: @default-heading-bg-color;
 @breadcrumb-bg: @default-heading-bg-color;
