@@ -94,11 +94,19 @@
     }
     &.highlighted {
       @highlighted-bg: @state-info-bg;
-      .button-variant(#000, @highlighted-bg, darken(@highlighted-bg, 20%));
+      .button-variant-espo(
+        var(--state-info-text);
+        var(--state-info-bg);
+        var(--state-info-bg-5);
+        var(--state-info-bg-10);
+        var(--state-info-bg-17);
+        var(--state-info-bg-12);
+        var(--state-info-bg-25)
+      );
       border-radius: 0;
 
       &.focused {
-        background: darken(@highlighted-bg, 10%);
+        background: var(--state-info-bg-10);
       }
 
       &.disabled,
@@ -137,11 +145,20 @@
       }
     }
     &.range.highlighted {
-      @range-highlighted-bg: mix(@state-info-bg, @gray-lighter, 50%);
-      .button-variant(#000, @range-highlighted-bg, darken(@range-highlighted-bg, 20%));
+      @range-highlighted-bg: var(--state-info-bg-mix);
+
+      .button-variant-espo(
+        var(--state-info-text);
+        var(--state-info-bg-mix);
+        var(--state-info-bg-mix-5);
+        var(--state-info-bg-mix-10);
+        var(--state-info-bg-mix-17);
+        var(--state-info-bg-mix-12);
+        var(--state-info-bg-mix-25)
+      );
 
       &.focused {
-        background: darken(@range-highlighted-bg, 10%);
+        background: var(--state-info-bg-mix-10);
       }
 
       &.disabled,
@@ -168,13 +185,13 @@
     &.active,
     &.active.highlighted {
         .button-variant-espo(
-          @btn-default-color;
-          @btn-default-bg;
-          @btn-default-border;
-          @btn-default-bg-10;
-          @btn-default-bg-17;
-          @btn-default-border-12;
-          @btn-default-border-25
+          var(--brand-primary-text);
+          var(--brand-primary);
+          var(--brand-primary-5);
+          var(--brand-primary-10);
+          var(--brand-primary-17);
+          var(--brand-primary-12);
+          var(--brand-primary-25)
         );
       text-shadow: 0 -1px 0 rgba(0,0,0,.25);
     }
