@@ -1,6 +1,7 @@
 @main-gray-value: #E8ECED;
 
 @gray-base-value: #000;
+@gray-soft-value: lighten(@gray-base-value, 39.0%);
 
 @body-bg-value: #FEFEFE;
 
@@ -41,6 +42,9 @@
     --body-bg: @body-bg-value;
     --panel-bg: @body-bg-value;
     --main-gray: @main-gray-value;
+
+    --gray-base: @gray-base-value;
+    --gray-soft: @gray-soft-value;
 
     --brand-primary: @brand-primary-value;
     --brand-danger: @brand-danger-value;
@@ -151,6 +155,9 @@
 @body-bg: var(--body-bg);
 @panel-bg: var(--panel-bg);
 @main-gray: var(--main-gray);
+
+@gray-base: @gray-base-value;
+@gray-soft: @gray-soft-value;
 
 @btn-default-bg: @main-gray;
 @btn-default-border: @main-gray;
@@ -327,8 +334,6 @@
 @white-color: #fafbfc;
 
 @panel-primary-text: @white-color;
-
-@gray-soft: lighten(@gray-base, 39.0%);
 
 @well-bg: @default-heading-bg-color;
 @breadcrumb-bg: @default-heading-bg-color;
