@@ -47,11 +47,18 @@
 
 @input-border-value: #D1D5D6;
 
+@modal-backdrop-bg-value: #DBDBDB;
+
+@link-color-value: @brand-primary-value;
+@link-hover-color-value: darken(@link-color-value, 15%);
+
+@panel-bg-value: @body-bg-value;
+
 @gray-lighter-orange-mix-value: mix(orange, @gray-lighter-value, 50%);
 
 :root {
     --body-bg: @body-bg-value;
-    --panel-bg: @body-bg-value;
+    --panel-bg: @panel-bg-value;
     --main-gray: @main-gray-value;
 
     --white-color: @white-color-value;
@@ -207,6 +214,11 @@
     --navbar-inverse-link-disabled-bg: @navbar-inverse-link-disabled-bg-value;
 
     --input-border: @input-border-value;
+
+    --modal-backdrop-bg: @modal-backdrop-bg-value;
+
+    --link-color: @link-color-value;
+    --link-hover-color: @link-hover-color-value;
 }
 
 @gray-base: @gray-base-value;
@@ -273,8 +285,8 @@
 @brand-success: var(--brand-success);
 @brand-warning: var(--brand-warning);
 
-@link-color: @brand-primary;
-@link-hover-color: var(--brand-primary-15);
+@link-color: var(--link-color);
+@link-hover-color: var(--link-hover-color);
 
 @table-bg-hover: @default-heading-bg-color;
 @table-bg-active-5: var(--main-gray-5);
@@ -332,7 +344,7 @@
 @button-radius: 0px;
 
 @modal-title-padding: 10px;
-@modal-backdrop-bg: #DBDBDB;
+@modal-backdrop-bg: var(--modal-backdrop-bg);
 
 @padding-base-horizontal: 10px;
 
