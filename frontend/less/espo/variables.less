@@ -46,6 +46,7 @@
 @navbar-inverse-link-disabled-bg-value: transparent;
 
 @input-border-value: #D1D5D6;
+@input-border-focus-value: #66afe9;
 
 @modal-backdrop-bg-value: #DBDBDB;
 
@@ -58,6 +59,10 @@
 @table-bg-accent-value: #f9f9f9;
 @code-bg-value: #f9f9f9;
 
+@default-border-color-value: @main-gray;
+
+@panel-primary-border-value: darken(@brand-primary-value, 12%);
+@panel-default-border-value: @default-border-color;
 @panel-warning-bg-value: #efda97;
 
 @gray-lighter-orange-mix-value: mix(orange, @gray-lighter-value, 50%);
@@ -220,6 +225,13 @@
     --navbar-inverse-link-disabled-bg: @navbar-inverse-link-disabled-bg-value;
 
     --input-border: @input-border-value;
+    --input-border-focus: @input-border-focus-value;
+    --input-border-focus-rgba: rgba(
+        red(@input-border-focus-value),
+        green(@input-border-focus-value),
+        blue(@input-border-focus-value),
+        .6
+    );
 
     --modal-backdrop-bg: @modal-backdrop-bg-value;
 
@@ -230,6 +242,11 @@
 
     --table-bg-accent: @table-bg-accent-value;
     --code-bg: @code-bg-value;
+
+    --default-border-color: @default-border-color-value;
+
+    --panel-primary-border: @panel-primary-border-value;
+    --panel-default-border: @panel-default-border-value;
 
     --panel-warning-bg: @panel-warning-bg-value;
 }
@@ -289,7 +306,6 @@
 @brand-success-10: var(--brand-success-10);
 @brand-warning-10: var(--brand-warning-10);
 
-@default-border-color: @main-gray;
 @default-heading-bg-color: @main-gray;
 
 @brand-primary: var(--brand-primary);
@@ -309,6 +325,7 @@
 @list-group-active-text-color: var(--main-gray-lighten-40);
 
 @input-border: var(--input-border);
+@input-border-focus: var(--input-border-focus);
 
 @line-height-base: 1.36;
 @line-height-computed: floor(@font-size-base * @line-height-base);
@@ -388,7 +405,7 @@
 
 @panel-warning-bg: var(--panel-warning-bg);
 
-@panel-primary-border: var(--brand-primary-12);
+@panel-primary-border: var(--panel-primary-border);
 
 @table-bg-accent: var(--table-bg-accent);
 @code-bg: var(--code-bg);
@@ -430,10 +447,13 @@
 @panel-footer-bg: @default-heading-bg-color;
 @panel-default-heading-bg: @default-heading-bg-color;
 
-@panel-default-border: @default-border-color;
+@default-border-color: var(--default-border-color);
+
+@panel-default-border: var(--default-border-color);
+
 @list-group-border: @default-border-color;
 @panel-inner-border: @default-border-color;
-@panel-default-border: @default-border-color;
+
 @thumbnail-border: @default-border-color;
 @table-border-color: @default-border-color;
 @navbar-default-toggle-hover-bg: @default-border-color;
