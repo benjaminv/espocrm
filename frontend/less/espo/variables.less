@@ -49,10 +49,16 @@
 
 @modal-backdrop-bg-value: #DBDBDB;
 
+@text-color-value: @gray-dark-value;
+
 @link-color-value: @brand-primary-value;
 @link-hover-color-value: darken(@link-color-value, 15%);
 
 @panel-bg-value: @body-bg-value;
+@table-bg-accent-value: #f9f9f9;
+@code-bg-value: #f9f9f9;
+
+@panel-warning-bg-value: #efda97;
 
 @gray-lighter-orange-mix-value: mix(orange, @gray-lighter-value, 50%);
 
@@ -217,8 +223,15 @@
 
     --modal-backdrop-bg: @modal-backdrop-bg-value;
 
+    --text-color: @text-color-value;
+
     --link-color: @link-color-value;
     --link-hover-color: @link-hover-color-value;
+
+    --table-bg-accent: @table-bg-accent-value;
+    --code-bg: @code-bg-value;
+
+    --panel-warning-bg: @panel-warning-bg-value;
 }
 
 @gray-base: @gray-base-value;
@@ -284,6 +297,8 @@
 @brand-info: var(--brand-info);
 @brand-success: var(--brand-success);
 @brand-warning: var(--brand-warning);
+
+@text-color: var(--text-color);
 
 @link-color: var(--link-color);
 @link-hover-color: var(--link-hover-color);
@@ -371,15 +386,13 @@
 
 @state-warning-border: var(--state-warning-bg-10);
 
-@panel-warning-bg: #efda97;
+@panel-warning-bg: var(--panel-warning-bg);
 
 @panel-primary-border: var(--brand-primary-12);
 
+@table-bg-accent: var(--table-bg-accent);
+@code-bg: var(--code-bg);
 
-
-@table-bg-accent: #f9f9f9;
-
-@code-bg: #f9f9f9;
 @code-color: @text-color;
 
 @pre-border-color: @main-gray;
