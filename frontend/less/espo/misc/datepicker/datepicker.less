@@ -195,7 +195,15 @@
     }
     &.selected,
     &.selected.highlighted {
-      .button-variant(#fff, @gray-light, @gray);
+      .button-variant-espo(
+        #fff;
+        @gray-light;
+        var(--gray-light-5);
+        var(--gray-light-10);
+        var(--gray-light-17);
+        var(--gray-light-12);
+        var(--gray-light-25)
+      );
       text-shadow: 0 -1px 0 rgba(0,0,0,.25);
     }
     &.active,
