@@ -3,6 +3,7 @@
 @gray-base-value: #000;
 @gray-soft-value: lighten(@gray-base-value, 39.0%);
 @gray-dark-value: lighten(@gray-base-value, 20%);
+@gray-light-value: lighten(@gray-base, 46.7%);
 @gray-lighter-value: lighten(@gray-base-value, 93.5%);
 
 @body-bg-value: #FEFEFE;
@@ -31,7 +32,7 @@
 
 @state-info-bg-mix-value: mix(@state-info-bg-value, lighten(@gray-base-value, 93.5%), 50%);
 
-@navbar-inverse-color-value: @gray-light;
+@navbar-inverse-color-value: @gray-light-value;
 @navbar-inverse-bg-value: #4A6492;
 @navbar-inverse-border-value: transparent;
 @navbar-inverse-link-color-value: #DFDFDF;
@@ -50,6 +51,7 @@
     --gray-base: @gray-base-value;
     --gray-soft: @gray-soft-value;
     --gray-dark: @gray-dark-value;
+    --gray-light: @gray-light-value;
     --gray-lighter: @gray-lighter-value;
 
     --gray-dark-5: darken(@gray-dark-value, 5%);
@@ -194,6 +196,7 @@
 @main-gray: var(--main-gray);
 @gray-soft: var(--gray-soft);
 @gray-dark: var(--gray-dark);
+@gray-light: var(--gray-light);
 @gray-lighter: var(--gray-lighter);
 
 @btn-default-bg: @main-gray;
