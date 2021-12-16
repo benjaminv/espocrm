@@ -131,11 +131,19 @@
     }
     &.range {
       @range-bg: @gray-lighter;
-      .button-variant(#000, @range-bg, darken(@range-bg, 20%));
+      .button-variant-espo(
+        #000;
+        @range-bg;
+        var(--gray-lighter-5);
+        var(--gray-lighter-10);
+        var(--gray-lighter-17);
+        var(--gray-lighter-12);
+        var(--gray-lighter-25)
+      );
       border-radius: 0;
 
       &.focused {
-        background: darken(@range-bg, 10%);
+        background: var(--gray-lighter-10);
       }
 
       &.disabled,
@@ -168,8 +176,16 @@
       }
     }
     &.range.today {
-      @range-today-bg: mix(orange, @gray-lighter, 50%);
-      .button-variant(#000, @range-today-bg, darken(@range-today-bg, 20%));
+      @range-today-bg: var(--gray-lighter-orange-mix);
+      .button-variant-espo(
+        #000;
+        @range-today-bg;
+        var(--gray-lighter-orange-mix-5);
+        var(--gray-lighter-orange-mix-10);
+        var(--gray-lighter-orange-mix-12);
+        var(--gray-lighter-orange-mix-17);
+        var(--gray-lighter-orange-mix-25)
+      );
 
       &.disabled,
       &.disabled:active {
