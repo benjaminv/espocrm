@@ -65,6 +65,9 @@
 @panel-default-border-value: @default-border-color;
 @panel-warning-bg-value: #efda97;
 
+@btn-default-bg-value: @main-gray;
+@btn-default-border-value: @main-gray;
+
 @gray-lighter-orange-mix-value: mix(orange, @gray-lighter-value, 50%);
 
 :root {
@@ -249,6 +252,9 @@
     --panel-default-border: @panel-default-border-value;
 
     --panel-warning-bg: @panel-warning-bg-value;
+
+    --btn-default-bg: @btn-default-bg-value;
+    --btn-default-border: @btn-default-border-value;
 }
 
 @gray-base: @gray-base-value;
@@ -263,8 +269,9 @@
 @gray-light: var(--gray-light);
 @gray-lighter: var(--gray-lighter);
 
-@btn-default-bg: @main-gray;
-@btn-default-border: @main-gray;
+@btn-default-bg: var(--btn-default-bg);
+@btn-default-border: var(--btn-default-border);
+
 @btn-danger-bg: var(--brand-danger-5);
 @btn-info-border: var(--brand-info-5);
 @btn-success-border: var(--brand-success-5);
