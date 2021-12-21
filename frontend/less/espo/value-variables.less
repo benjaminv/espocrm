@@ -5,6 +5,7 @@
 @gray-base-value: #000;
 @gray-soft-value: lighten(@gray-base-value, 39.0%);
 @gray-dark-value: lighten(@gray-base-value, 20%);
+@gray-value: lighten(@gray-base, 33.5%);
 @gray-light-value: lighten(@gray-base, 46.7%);
 @gray-lighter-value: lighten(@gray-base-value, 93.5%);
 
@@ -47,8 +48,14 @@
 
 @input-border-value: #D1D5D6;
 @input-border-focus-value: #66afe9;
+@input-color-value: @gray-value;
+@input-bg-value: @white-color;
 
 @modal-backdrop-bg-value: #DBDBDB;
+@modal-header-border-color-value: #e5e5e5;
+@modal-header-bg-value: @default-heading-bg-color-value;
+@modal-footer-bg-value: @body-bg-value;
+@modal-content-bg-value: @body-bg-value;
 
 @text-color-value: @gray-dark-value;
 
@@ -72,9 +79,18 @@
 @panel-primary-border-value: darken(@brand-primary-value, 12%);
 @panel-warning-bg-value: #efda97;
 
-@btn-default-bg-value: @main-gray;
-@btn-default-border-value: @main-gray;
+@btn-default-color-value: #333;
+@btn-default-bg-value: @main-gray-value;
+@btn-default-border-value: @main-gray-value;
+
+@btn-text-color-value: @gray-dark-value;
+
+@site-footer-bg-value: @gray-lighter-value;
+@site-footer-color-value: @gray-value;
 
 @login-panel-heading-bg-value: @navbar-inverse-bg-value;
 
 @gray-lighter-orange-mix-value: mix(orange, @gray-lighter-value, 50%);
+
+@calendar-today-bg-value: #fcf8e3;
+@calendar-border-value: #ddd;
