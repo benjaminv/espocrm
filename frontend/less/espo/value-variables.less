@@ -23,7 +23,7 @@
 
 @state-primary-text-value: #5b9aca;
 
-@state-success-bg-value: lighten(spin(@brand-success-value, 5), 31%);
+@state-success-bg-value: lighten(spin(@brand-success-value, 5), 30%);
 @state-success-text-value: darken(spin(@brand-success-value, 7), 17%);
 
 @state-info-bg-value: #e5ddf8;
@@ -73,11 +73,23 @@
 @default-heading-bg-color-value: @main-gray-value;
 
 @panel-default-text-value: @gray-dark-value;
-@panel-default-heading-bg-value: @default-heading-bg-color;
+
 @panel-default-border-value: @default-border-color-value;
 
-@panel-primary-border-value: darken(@brand-primary-value, 12%);
+@panel-default-bg-value: @main-gray-value;
+@panel-primary-bg-value: darken(@brand-primary-value, 12%);
+@panel-danger-bg-value: @state-danger-bg-value;
 @panel-warning-bg-value: #efda97;
+@panel-success-bg-value: @state-success-bg-value;
+@panel-info-bg-value: @state-info-bg-value;
+
+@panel-primary-border-value: darken(@brand-primary-value, 12%);
+
+@panel-primary-text-value: @white-color-value;
+@panel-danger-text-value: @state-danger-text-value;
+@panel-success-text-value: @state-success-text-value;
+@panel-warning-text-value: @state-warning-text-value;
+@panel-info-text-value: @state-info-text-value;
 
 @btn-default-color-value: #333;
 @btn-default-bg-value: @main-gray-value;
