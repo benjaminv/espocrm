@@ -92,8 +92,12 @@
     --state-danger-bg: @state-danger-bg-value;
     --state-danger-text: @state-danger-text-value;
 
+    --state-danger-text-10: darken(@state-danger-text-value, 10%);
+
     --state-danger-bg-5: darken(@state-danger-bg-value, 5%);
     --state-danger-bg-10: darken(@state-danger-bg-value, 10%);
+    --state-danger-text-10: darken(@state-danger-text-value, 10%);
+    --state-danger-text-10l: lighten(darken(@state-danger-text-value, 10%), 20);
 
     --brand-info-5: darken(@brand-info-value, 5%);
     --brand-info-10: darken(@brand-info-value, 10%);
@@ -140,6 +144,9 @@
 
     --state-warning-bg: @state-warning-bg-value;
     --state-warning-text: @state-warning-text-value;
+
+    --state-warning-text-10: darken(@state-warning-text-value, 10%);
+    --state-warning-text-10l: lighten(darken(@state-warning-text-value, 10%), 20);
 
     --state-warning-bg-5: darken(@state-warning-bg-value, 5%);
     --state-warning-bg-10: darken(@state-warning-bg-value, 10%);
@@ -220,6 +227,7 @@
 
     --calendar-today-bg: @calendar-today-bg-value;
     --calendar-border: @calendar-border-value;
+    --calendar-busy-bg: @calendar-busy-bg-value;
 
     --select-item-text-color: @text-color-value;
     --select-item-bg: @select-item-bg-value;
