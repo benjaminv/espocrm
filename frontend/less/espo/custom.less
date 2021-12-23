@@ -1582,20 +1582,25 @@ body .note-editor .panel-heading {
 }
 
 .autocomplete-suggestions {
-    border: 1px solid @input-border;
-    background: @white-color;
+    border: 1px solid var(--dropdown-border);
+    background-color: var(--dropdown-bg);
+    color: var(--dropdown-link-color);
     cursor: default;
     overflow: auto;
     .box-shadow(0 6px 12px rgba(0,0,0,.175));
+
+    .autocomplete-suggestion.autocomplete-selected {
+        background-color: var(--dropdown-link-hover-bg) !important;
+        color: var(--dropdown-link-hover-color) !important;
+    }
 }
+
 .autocomplete-suggestion {
     padding: 2px 5px;
     white-space: nowrap;
     overflow: hidden;
 }
-.autocomplete-selected {
-    background: @main-gray;
-}
+
 .autocomplete-suggestions strong {
     font-weight: normal; color: @brand-primary;
 }
