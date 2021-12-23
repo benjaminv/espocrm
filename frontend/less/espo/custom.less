@@ -247,7 +247,7 @@ div.list-kanban > div > table {
     th.group-header {
         font-weight: normal;
 
-        color: @white-color;
+        color: var(--text-white-color);
         background-color: @gray-light;
 
         position: relative;
@@ -268,10 +268,10 @@ div.list-kanban > div > table {
                 position: relative;
                 right: 14px;
 
-                color: @white-color;
+                color: var(--text-white-color);
 
                 &:hover, &:active {
-                    color: @white-color
+                    color: var(--text-white-color);
                 }
             }
         }
@@ -290,7 +290,7 @@ div.list-kanban > div > table {
 
         > div:after {
             left: ~"calc(100% - 10px)";
-            border-color: transparent transparent transparent @white-color;
+            border-color: transparent transparent transparent var(--body-bg);
             background-color: @gray-light;
         }
 

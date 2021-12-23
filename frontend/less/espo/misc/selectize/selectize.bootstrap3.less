@@ -155,3 +155,10 @@
 	.selectize-box-shadow(none);
 	.selectize-border-radius(0);
 }
+
+.selectize-control.plugin-drag_drop {
+	&.multi > .selectize-input > div.ui-sortable-placeholder {
+		background: transparent !important;
+		border: 1px solid var(--input-border-focus) !important;
+	}
+}
