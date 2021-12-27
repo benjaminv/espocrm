@@ -27,9 +27,6 @@
             "type": "link",
             "required": true
         },
-        "totalCount": {
-            "type": "int"
-        },
         "notifyOnFinish": {
             "type": "bool",
             "default": false

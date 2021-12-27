@@ -68,8 +68,6 @@ class Process implements Job
 
         $massAction = $this->factory->create($entity->getAction());
 
-        $this->entityManager->refreshEntity($entity);
-
         $params = Params::createWithSearchParams(
             $entity->getEntityType(),
             $entity->getSearchParams()
@@ -80,6 +78,8 @@ class Process implements Job
             $entity->getData()
         );
 
+        $this->entityManager->refreshEntity($entity);
+
         if ($entity->notifyOnFinish()) {
             $this->notifyFinish();
         }
@@ -87,6 +87,6 @@ class Process implements Job
 
     private function notifyFinish(MassActionEntity $entity): void
     {
-
+        // @todo
     }
 }

@@ -95,11 +95,6 @@ class MassAction extends Entity
         return $value;
     }
 
-    public function getTotalCount(): ?int
-    {
-        return $this->get('totalCount');
-    }
-
     public function notifyOnFinish(): bool
     {
         return (bool) $this->get('notifyOnFinish');

@@ -32,7 +32,7 @@ namespace Espo\Controllers;
 use Espo\Core\{
     Exceptions\BadRequest,
     MassAction\Service,
-    MassAction\Result,
+    MassAction\ServiceResult,
     MassAction\Params,
     Api\Request,
 };
@@ -60,6 +60,7 @@ class MassAction
         $action = $body->action ?? null;
         $params = $body->params ?? null;
         $data = $body->data ?? (object) [];
+        $isIdle = $body->isIdle ?? false;
 
         if (!$entityType || !$action || !$params) {
             throw new BadRequest();
@@ -68,7 +69,8 @@ class MassAction
         $rawParams = $this->prepareMassActionParams($params);
 
         try {
-            $massActionParams = Params::fromRaw($rawParams, $entityType);
+            $massActionParams = Params::fromRaw($rawParams, $entityType)
+                ->withIsIdle($isIdle);
         }
         catch (RuntimeException $e) {
             throw new BadRequest($e->getMessage());
@@ -113,8 +115,16 @@ class MassAction
         throw new BadRequest("Bad search params for mass action.");
     }
 
-    private function convertResult(Result $result): stdClass
+    private function convertResult(ServiceResult $serviceResult): stdClass
     {
+        if (!$serviceResult->hasResult()) {
+            return (object) [
+                'id' => $serviceResult->getId(),
+            ];
+        }
+
+        $result = $serviceResult->getResult();
+
         $data = (object) [];
 
         if ($result->hasCount()) {
