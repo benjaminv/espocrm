@@ -36,6 +36,10 @@
         "createdBy": {
             "type": "belongsTo",
             "entity": "User"
+        },
+        "job": {
+            "type": "belongsTo",
+            "entity": "Job"
         }
     }
 }

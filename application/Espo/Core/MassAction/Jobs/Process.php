@@ -34,13 +34,14 @@ use Espo\Core\Job\Job;
 use Espo\Core\Job\Job\Data as JobData;
 use Espo\Core\MassAction\Params;
 use Espo\Core\MassAction\MassActionFactory;
+use Espo\Core\Utils\Language;
 
 use Espo\ORM\EntityManager;
 
 use Espo\Entities\MassAction as MassActionEntity;
 use Espo\Entities\Notification;
 
-use Espo\Core\Utils\Language;
+use Throwable;
 
 class Process implements Job
 {
@@ -50,8 +51,11 @@ class Process implements Job
 
     private $language;
 
-    public function __construct(EntityManager $entityManager, MassActionFactory $factory, Language $language)
-    {
+    public function __construct(
+        EntityManager $entityManager,
+        MassActionFactory $factory,
+        Language $language
+    ) {
         $this->entityManager = $entityManager;
         $this->factory = $factory;
         $this->language = $language;
@@ -70,17 +74,28 @@ class Process implements Job
             throw new Error("MassAction '{$id}' not found.");
         }
 
-        $massAction = $this->factory->create($entity->getAction());
+        try {
+            $massAction = $this->factory->create($entity->getAction());
 
-        $params = Params::createWithSearchParams(
-            $entity->getEntityType(),
-            $entity->getSearchParams()
-        );
+            $params = Params::createWithSearchParams(
+                $entity->getEntityType(),
+                $entity->getSearchParams()
+            );
 
-        $massAction->process(
-            $params,
-            $entity->getData()
-        );
+            $this->setRunning($entity);
+
+            $massAction->process(
+                $params,
+                $entity->getData()
+            );
+        }
+        catch (Throwable $e) {
+            $this->setFailed($entity);
+
+            throw new Error("Mass action job error: " . $e->getMessage());
+        }
+
+        $this->setSuccess($entity);
 
         $this->entityManager->refreshEntity($entity);
 
@@ -101,5 +116,26 @@ class Process implements Job
             ->setUserId($entity->getCreatedBy()->getId());
 
         $this->entityManager->saveEntity($notification);
+    }
+
+    private function setFailed(MassActionEntity $entity): void
+    {
+        $entity->setStatus(MassActionEntity::STATUS_FAILED);
+
+        $this->entityManager->saveEntity($entity);
+    }
+
+    private function setRunning(MassActionEntity $entity): void
+    {
+        $entity->setStatus(MassActionEntity::STATUS_RUNNING);
+
+        $this->entityManager->saveEntity($entity);
+    }
+
+    private function setSuccess(MassActionEntity $entity): void
+    {
+        $entity->setStatus(MassActionEntity::STATUS_SUCCESS);
+
+        $this->entityManager->saveEntity($entity);
     }
 }
