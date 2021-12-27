@@ -72,13 +72,20 @@ class Service
      * @throws Forbidden
      * @throws BadRequest
      */
-    public function process(string $entityType, string $action, Params $params, stdClass $data): ServiceResult
-    {
+    public function process(
+        string $entityType,
+        string $action,
+        ServiceParams $serviceParams,
+        stdClass $data
+    ): ServiceResult {
+
         if (!$this->acl->checkScope($entityType)) {
             throw new ForbiddenSilent();
         }
 
-        if ($params->isIdle()) {
+        $params = $serviceParams->getParams();
+
+        if ($serviceParams->isIdle()) {
             return $this->schedule($entityType, $action, $params, $data);
         }
 

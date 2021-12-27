@@ -29,13 +29,14 @@
 
 namespace Espo\Controllers;
 
-use Espo\Core\{
-    Exceptions\BadRequest,
-    MassAction\Service,
-    MassAction\ServiceResult,
-    MassAction\Params,
-    Api\Request,
-};
+use Espo\Core\Exceptions\BadRequest;
+
+use Espo\Core\MassAction\Service;
+use Espo\Core\MassAction\ServiceResult;
+use Espo\Core\MassAction\Params;
+use Espo\Core\MassAction\ServiceParams;
+
+use Espo\Core\Api\Request;
 
 use stdClass;
 use RuntimeException;
@@ -69,17 +70,19 @@ class MassAction
         $rawParams = $this->prepareMassActionParams($params);
 
         try {
-            $massActionParams = Params::fromRaw($rawParams, $entityType)
-                ->withIsIdle($isIdle);
+            $massActionParams = Params::fromRaw($rawParams, $entityType);
         }
         catch (RuntimeException $e) {
             throw new BadRequest($e->getMessage());
         }
 
+        $serviceParams = ServiceParams::create($massActionParams)
+            ->withIsIdle($isIdle);
+
         $result = $this->service->process(
             $entityType,
             $action,
-            $massActionParams,
+            $serviceParams,
             $data
         );
 

@@ -29,17 +29,18 @@
 
 namespace Espo\Core\MassAction\Jobs;
 
+use Espo\Core\Exceptions\Error;
 use Espo\Core\Job\Job;
 use Espo\Core\Job\Job\Data as JobData;
-
 use Espo\Core\MassAction\Params;
 use Espo\Core\MassAction\MassActionFactory;
 
 use Espo\ORM\EntityManager;
 
 use Espo\Entities\MassAction as MassActionEntity;
+use Espo\Entities\Notification;
 
-use Espo\Core\Exceptions\Error;
+use Espo\Core\Utils\Language;
 
 class Process implements Job
 {
@@ -47,10 +48,13 @@ class Process implements Job
 
     private $factory;
 
-    public function __construct(EntityManager $entityManager, MassActionFactory $factory)
+    private $language;
+
+    public function __construct(EntityManager $entityManager, MassActionFactory $factory, Language $language)
     {
         $this->entityManager = $entityManager;
         $this->factory = $factory;
+        $this->language = $language;
     }
 
     public function run(JobData $data): void
@@ -60,7 +64,7 @@ class Process implements Job
         assert($id !== null);
 
         /** @var MassActionEntity|null $entity */
-        $entity = $this->entityManager->getEntity(MassAction::ENTITY_TYPE, $id);
+        $entity = $this->entityManager->getEntity(MassActionEntity::ENTITY_TYPE, $id);
 
         if ($entity === null) {
             throw new Error("MassAction '{$id}' not found.");
@@ -81,12 +85,21 @@ class Process implements Job
         $this->entityManager->refreshEntity($entity);
 
         if ($entity->notifyOnFinish()) {
-            $this->notifyFinish();
+            $this->notifyFinish($entity);
         }
     }
 
     private function notifyFinish(MassActionEntity $entity): void
     {
-        // @todo
+        /** @var Notification $notification */
+        $notification = $this->entityManager->getNewEntity(Notification::ENTITY_TYPE);
+
+        $message = $this->language->translate('massActionProcessed', 'message');
+
+        $notification
+            ->setMessage($message)
+            ->setUserId($entity->getCreatedBy()->getId());
+
+        $this->entityManager->saveEntity($notification);
     }
 }

@@ -41,8 +41,6 @@ class Params
 
     private $searchParams;
 
-    private $isIdle = false;
-
     private function __construct()
     {
     }
@@ -70,27 +68,9 @@ class Params
         return $this->searchParams;
     }
 
-    public function isIdle(): bool
-    {
-        return $this->isIdle;
-    }
-
     public function hasIds(): bool
     {
         return !is_null($this->ids);
-    }
-
-    public function withIsIdle(bool $isIdle = true): self
-    {
-        if ($isIdle && !$this->searchParams) {
-            throw new RuntimeException("Mass action can't be idle w/o search params.");
-        }
-
-        $obj = clone $this;
-
-        $obj->isIdle = $isIdle;
-
-        return $obj;
     }
 
     public static function createWithIds(string $entityType, array $ids): self
