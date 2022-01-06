@@ -1,0 +1,7 @@
+
+DocumentRoot /var/www/vhosts/wonderlong.com/httpdocs-sub/public/
+Alias /client/ /var/www/vhosts/wonderlong.com/httpdocs-sub/client/
+
+<Directory /var/www/vhosts/wonderlong.com/httpdocs-sub/public/>
+  AllowOverride All
+</Directory>
