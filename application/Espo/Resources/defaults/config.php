@@ -41,7 +41,7 @@ return [
     'recordsPerPage' => 20,
     'recordsPerPageSmall' => 5,
     'applicationName' => 'EspoCRM',
-    'version' => '@@version',
+    'version' => '7.0.8',
     'timeZone' => 'UTC',
     'dateFormat' => 'DD.MM.YYYY',
     'timeFormat' => 'HH:mm',
