@@ -1,4 +1,5 @@
-README.md
 .idea/
 .github/
 data/cache/
+data/logs/
+data/upload/

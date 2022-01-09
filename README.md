@@ -1,5 +1,5 @@
 # copy over of official release/7.0.8
-## Installation
+## Installation - don't use as out-dated
 follow this guide:
 https://docs.espocrm.com/administration/installation/
 
