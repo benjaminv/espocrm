@@ -1,0 +1,36 @@
+{
+  "fields": {
+    "width": "Ilgis (%)",
+    "link": "Nuoroda",
+    "notSortable": "Nerūšiuojama",
+    "align": "Lygiuoti",
+    "panelName": "Panelės pavadinimas",
+    "style": "Stilius",
+    "sticked": "Prikabinta",
+    "isLarge": "Didelis šrifto dydis",
+    "dynamicLogicVisible": "Sąlygos, dėl kurių skydas matomas",
+    "hidden": "Paslėptas"
+  },
+  "options": {
+    "align": {
+      "left": "Kairėje",
+      "right": "Dešinėje"
+    },
+    "style": {
+      "default": "Numatytas",
+      "success": "Sėminga",
+      "danger": "Pavojus",
+      "info": "Informacija",
+      "warning": "Įspėjimas",
+      "primary": "Pirminis"
+    }
+  },
+  "labels": {
+    "New panel": "Nauja panelė",
+    "Layout": "Išdėtymas"
+  },
+  "tooltips": {
+    "link": "Jei pažymėta, lauko reikšmė bus rodoma kaip nuoroda, nukreipianti į išsamią įrašo peržiūrą. Paprastai tai naudojama *Vardas* laukams.",
+    "hiddenPanel": "Norint pamatyti skydelį, reikia spustelėti \"Rodyti daugiau\"."
+  }
+}

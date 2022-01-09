@@ -1,0 +1,36 @@
+{
+  "fields": {
+    "width": "Platums (%)",
+    "link": "Saite",
+    "notSortable": "Nevar kārtot",
+    "align": "Līdzināt",
+    "panelName": "Paneļa nosaukums",
+    "style": "Stils",
+    "sticked": "Nostiprināts",
+    "isLarge": "Liels šrifta izmērs",
+    "dynamicLogicVisible": "Nosacījumi, lai panelis kļūtu redzams",
+    "hidden": "Slēptais"
+  },
+  "options": {
+    "align": {
+      "left": "Pa kreisi",
+      "right": "Pa labi"
+    },
+    "style": {
+      "default": "Noklusējuma",
+      "success": "Izpildīts",
+      "danger": "Bīstamība",
+      "info": "Informācija",
+      "warning": "Brīdinājums",
+      "primary": "Primārais"
+    }
+  },
+  "labels": {
+    "New panel": "Jauns panelis",
+    "Layout": "Izkārtojums"
+  },
+  "tooltips": {
+    "link": "Ja ir atzīmēts, lauka vērtība tiks parādīta kā saite, kas norāda uz ieraksta detalizētu pārskatu. Parasti to izmanto *Nosaukums* laukiem.",
+    "hiddenPanel": "Lai redzētu paneli, ir jānoklikšķina uz \"parādīt vairāk\"."
+  }
+}
