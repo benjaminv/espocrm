@@ -1,9 +1,0 @@
-{
-    "beforeLoginHookClassNameList": [
-        "Espo\\Core\\Authentication\\Hook\\Hooks\\FailedAttemptsLimit"
-    ],
-    "onFailHookClassNameList": [],
-    "onSuccessHookClassNameList": [],
-    "onSuccessByTokenHookClassNameList": [],
-    "onSecondStepRequiredHookClassNameList": []
-}

@@ -1,1 +1,0 @@
-{{#if value}}<span class="fas fa-paperclip small text-soft" title="{{translate 'hasAttachment' category='fields' scope='Email'}}"></span>{{/if}}

@@ -1,8 +1,0 @@
-{
-    "selectAttributesDependencyMap": {
-        "duration": [
-            "dateStart",
-            "dateEnd"
-        ]
-    }
-}
