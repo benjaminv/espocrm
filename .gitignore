@@ -1,0 +1,12 @@
+.DS_Store
+
+# local installation cache and log, safe enough for ignore in production deployment and dev.
+data/cache/
+data/logs/
+
+#  following files were created after installation, should be assued unchanged, as  
+#  git update-index --assume-unchanged <file>
+#  ignored for now  
+data/config-internal.php
+data/config.php
+install/config.php
