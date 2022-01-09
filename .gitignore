@@ -1,12 +1,23 @@
+# Suggested for better experience of CDCI
+
+# Common trash
+.idea/
+.github/
+
 .DS_Store
 
-# local installation cache and log, safe enough for ignore in production deployment and dev.
+# Local installation cache and log, 
+# safe enough for ignore for local dev.
 data/cache/
 data/logs/
 
-#  following files were created after installation, should be assued unchanged, as  
-#  git update-index --assume-unchanged <file>
-#  ignored for now  
+# Production customizations, 
+# safe enough for ignore for local dev.
+data/upload/
+
+# Files created during installation, 
+# should be assued unchanged, using `git update-index --assume-unchanged <file>`
+# ignored for now  
 data/config-internal.php
 data/config.php
 install/config.php
